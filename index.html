@@ -5,66 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad - CarOnline</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
-        h1, h2 { color: #1f2937; }
-        p { margin-bottom: 1em; }
+        :root {
+            --primary-color: #1f2937;
+            --text-color: #374151;
+            --bg-color: #f9fafb;
+            --container-bg: #ffffff;
+            --border-color: #e5e7eb;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--container-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 1em;
+        }
+        ul {
+            margin-top: 0;
+            margin-bottom: 1em;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 0.5em;
+        }
+        .last-updated {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+        .highlight {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
-    <h1>Política de Privacidad de CarOnline</h1>
-    <p><strong>Última actualización:</strong> 10 de noviembre de 2026</p>
-    
-    <h2>1. Información que recopilamos</h2>
-    <h3>Política de Privacidad de CarOnline</h3>
+    <div class="container">
+        <h1>Política de Privacidad de CarOnline</h1>
+        <p class="last-updated"><strong>Última actualización:</strong> 10 de noviembre de 2026</p>
 
-<p>
-1. Información que recopilamos
-CarOnline ("la Aplicación") recopila información para brindar servicios de gestión de flotas y alquiler de vehículos. Los datos que recopilamos incluyen:
+        <h2>1. Información que recopilamos</h2>
+        <p>CarOnline ("la Aplicación") recopila información para brindar servicios de gestión de flotas y alquiler de vehículos. Los datos que recopilamos incluyen:</p>
+        <ul>
+            <li><span class="highlight">Datos de identificación personal:</span> Nombre completo, correo electrónico, número de teléfono, cédula de identidad y dirección, proporcionados al momento del registro o por el administrador de la organización.</li>
+            <li><span class="highlight">Datos de ubicación:</span> Cuando un usuario con rol de "Conductor" tiene un vehículo asignado, la Aplicación recopila la ubicación GPS precisa del dispositivo en segundo plano. Esto es necesario para el monitoreo de la flota en tiempo real por parte de los administradores.</li>
+            <li><span class="highlight">Imágenes y Cámara:</span> Recopilamos fotos tomadas a través de la Aplicación para reportes de daños, accidentes, comprobantes de pago y escaneo de códigos QR de mantenimiento.</li>
+            <li><span class="highlight">Datos de uso y actividad:</span> Registros de inicios de sesión, pagos registrados, mantenimientos y otra actividad operativa dentro de la plataforma.</li>
+        </ul>
 
-Datos de identificación personal: Nombre completo, correo electrónico, número de teléfono, cédula de identidad y dirección, proporcionados al momento del registro o por el administrador de la organización.
+        <h2>2. Uso de la información</h2>
+        <p>Utilizamos la información recopilada para:</p>
+        <ul>
+            <li>Gestionar las cuentas de usuario y la autenticación.</li>
+            <li>Permitir a los administradores y dueños de flotas monitorear la ubicación de los vehículos en tiempo real.</li>
+            <li>Procesar y validar pagos, mantenimientos y devoluciones de vehículos.</li>
+            <li>Enviar notificaciones push relacionadas con la operación (alertas de pagos, asignaciones, etc.).</li>
+            <li>Garantizar la seguridad y el cumplimiento de las obligaciones contractuales.</li>
+        </ul>
 
-Datos de ubicación: Cuando un usuario con rol de "Conductor" tiene un vehículo asignado, la Aplicación recopila la ubicación GPS precisa del dispositivo en segundo plano. Esto es necesario para el monitoreo de la flota en tiempo real por parte de los administradores.
+        <h2>3. Compartir información</h2>
+        <p>No vendemos ni compartimos su información personal con terceros con fines publicitarios. La información se almacena de forma segura en <strong>Supabase</strong>, nuestro proveedor de infraestructura de bases de datos y autenticación, el cual cumple con estrictos estándares de seguridad (SOC 2). Los datos de ubicación solo son accesibles para los administradores de la organización a la que pertenece el usuario.</p>
 
-Imágenes y Cámara: Recopilamos fotos tomadas a través de la Aplicación para reportes de daños, accidentes, comprobantes de pago y escaneo de códigos QR de mantenimiento.
+        <h2>4. Permisos del dispositivo</h2>
+        <p>La Aplicación solicita los siguientes permisos:</p>
+        <ul>
+            <li><span class="highlight">Ubicación (en segundo plano):</span> Para el rastreo del vehículo del conductor.</li>
+            <li><span class="highlight">Cámara:</span> Para escanear códigos QR y tomar fotografías de evidencias.</li>
+            <li><span class="highlight">Notificaciones:</span> Para alertar sobre eventos importantes de la flota.</li>
+            <li><span class="highlight">Almacenamiento:</span> Para guardar y cargar fotos.</li>
+        </ul>
 
-Datos de uso y actividad: Registros de inicios de sesión, pagos registrados, mantenimientos y otra actividad operativa dentro de la plataforma.
+        <h2>5. Seguridad y retención de datos</h2>
+        <p>Implementamos medidas de seguridad técnicas y organizativas para proteger sus datos. Conservamos su información mientras su cuenta esté activa o sea necesaria para cumplir con obligaciones legales.</p>
 
-2. Uso de la información
-Utilizamos la información recopilada para:
+        <h2>6. Sus derechos</h2>
+        <p>Usted puede solicitar el acceso, corrección o eliminación de su información personal contactando al administrador de su organización o escribiendo a <strong>soporte@caronline.com</strong>.</p>
 
-Gestionar las cuentas de usuario y la autenticación.
-
-Permitir a los administradores y dueños de flotas monitorear la ubicación de los vehículos en tiempo real.
-
-Procesar y validar pagos, mantenimientos y devoluciones de vehículos.
-
-Enviar notificaciones push relacionadas con la operación (alertas de pagos, asignaciones, etc.).
-
-Garantizar la seguridad y el cumplimiento de las obligaciones contractuales.
-
-3. Compartir información
-No vendemos ni compartimos su información personal con terceros con fines publicitarios. La información se almacena de forma segura en Supabase, nuestro proveedor de infraestructura de bases de datos y autenticación, el cual cumple con estrictos estándares de seguridad (SOC 2). Los datos de ubicación solo son accesibles para los administradores de la organización a la que pertenece el usuario.
-
-4. Permisos del dispositivo
-La Aplicación solicita los siguientes permisos:
-
-Ubicación (en segundo plano): Para el rastreo del vehículo del conductor.
-
-Cámara: Para escanear códigos QR y tomar fotografías de evidencias.
-
-Notificaciones: Para alertar sobre eventos importantes de la flota.
-
-Almacenamiento: Para guardar y cargar fotos.
-
-5. Seguridad y retención de datos
-Implementamos medidas de seguridad técnicas y organizativas para proteger sus datos. Conservamos su información mientras su cuenta esté activa o sea necesaria para cumplir con obligaciones legales.
-
-6. Sus derechos
-Usted puede solicitar el acceso, corrección o eliminación de su información personal contactando al administrador de su organización o escribiendo a soporte@caronline.com.
-
-7. Cambios en esta política
-Podemos actualizar esta política ocasionalmente. Los cambios serán notificados a través de la Aplicación.</p>
-    
-    
+        <h2>7. Cambios en esta política</h2>
+        <p>Podemos actualizar esta política ocasionalmente. Los cambios serán notificados a través de la Aplicación.</p>
+    </div>
 </body>
 </html>
